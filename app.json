@@ -1,0 +1,7 @@
+{
+    "name": "cMessage Application",
+    "description": "A global messaging system to send and receive messages from multiple people at once.",
+    "repository": "https://github.com/uacs337spring2019/final-project-macrohard",
+    "logo": "https://github.com/uacs337spring2019/final-project-macrohard/blob/master/public/icon.jpg",
+    "keywords": ["node", "express", "static"]
+}
