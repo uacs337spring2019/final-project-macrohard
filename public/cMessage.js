@@ -96,10 +96,12 @@
 							newMessage.className = "other";
 						}
 						let label = document.createElement("label");
-						label.innerHTML = json.messageData[i].username;
+						label.innerText = json.messageData[i].username;
 						newMessage.appendChild(label);
-						newMessage.appendChild(document.createElement("br"));
-						newMessage.innerHTML += json.messageData[i].message;
+                        newMessage.appendChild(document.createElement("br"));
+                        let p = document.createElement("p");
+                        p.innerText += json.messageData[i].message;
+                        newMessage.appendChild(p);
 						messages.append(newMessage);
 					}
 				}
