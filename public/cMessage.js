@@ -6,7 +6,7 @@
     const NOT_FOUND_HTTP_STATUS = 410;
     const FILE_GONE_HTTP_STATUS = 404;
     const NO_CHANGE = 304;
-    const URL = "https://cmessage337.herokuapp.com/:process.env.PORT/messages";
+    const URL = "https://cmessage337.herokuapp.com/messages";
     const TYPING_RATE = 3000;
 
     let username = "";
