@@ -1,126 +1,126 @@
 /*	Authors: Coby Allred & Cathy McIntosh
 	Section: CS337 Section 001
-    Description: Stylesheet for a simple chat interface
-    where chat bubbles are arranged vertically and the send
-    button is slightly fancier than a normal button. This also controls
-    hover behavior and flow structure of navigations.
+	Description: Stylesheet for a simple chat interface
+	where chat bubbles are arranged vertically and the send
+	button is slightly fancier than a normal button. This also controls
+	hover behavior and flow structure of navigations.
 */
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 label {
-    font-weight: bold;
+	font-weight: bold;
 }
 
 .typing {
-    font-style: italic;
+	font-style: italic;
 }
 
 /*
-    Some color choices
+	Some color choices
 */
 .error {
-    background-color: red;
+	background-color: red !important;
 }
 
 .conversation:hover, button:hover, .user {
-    background-color: aquamarine;
+	background-color: aquamarine;
 }
 
 button, .other {
-    background-color: lightgray;
+	background-color: lightgray;
 }
 
 h2, #status {
-    overflow: hidden;
-    background-color: white;
-    position: sticky;
-    top: 0;
-    text-align: center;
-    width: 100%;
+	overflow: hidden;
+	background-color: white;
+	position: sticky;
+	top: 0;
+	text-align: center;
+	width: 100%;
 }
 
 h2, #message-panel {
-    border: 2px solid darkgray;
+	border: 2px solid darkgray;
 }
 
 #container > div, button, #conversations div, #messages div, #input-container {
-    padding: 10px;
+	padding: 10px;
 }
 
 #conversations-panel {
-    font-size: 20px;
-    width: 30%;
+	font-size: 20px;
+	width: 30%;
 }
 
 #message-panel {
-    height: 750px;
-    width: 70%;
-    margin: auto;
+	width: 70%;
+	margin: auto;
 }
 
 #messages, #input {
-    overflow-y: auto;
+	overflow-y: auto;
 }
 
 #input {
-    display: flex;
-    padding-top:10px;
+	display: flex;
+	padding-top:10px;
 }
 
 #input-container, button {
-    margin: 10px;
+	margin: 10px;
 }
 
 button {
-    border-radius: 10px;
-    border-style: none;
+	border-radius: 10px;
+	border-style: none;
 }
 
 textarea {
-    overflow-y: scroll;
-    resize: none; 
-    width: 80%;
+	overflow-y: scroll;
+	resize: none; 
+	width: 80%;
 }
 
 #messages > div:not(#place) {
-    border-radius: 20px;
-    margin-bottom: 20px;
-    width: fit-content;
+	border-radius: 20px;
+	margin-bottom: 20px;
+	width: fit-content;
 }
 
 .user {
-    text-align: right;
-    margin-left: auto;
+	text-align: right;
+	margin-left: auto;
 }
 
 .other {
-    text-align: left;
+	text-align: left;
 }
 
 #messages {
-    height: 80%;
+	max-height:60%;
+	max-height:60vh;
 }
 
 /* width */
 ::-webkit-scrollbar {
-    width: 10px;
+	width: 10px;
   }
   
   /* Track */
   ::-webkit-scrollbar-track {
-    border-radius: 5px;
-    background: #f1f1f1; 
+	border-radius: 5px;
+	background: #f1f1f1; 
   }
    
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    border-radius: 5px;
-    background: lightblue; 
+	border-radius: 5px;
+	background: lightblue; 
   }
   
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: #555; 
+	background: #555; 
   }
