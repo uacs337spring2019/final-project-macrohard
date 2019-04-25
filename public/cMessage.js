@@ -1,6 +1,5 @@
-"use strict";
-
 (function() {
+    'use strict';
     const OK_HTTP_STATUS = 200;
     const MULTCHOICES_HTTP_STATUS = 300;
     const NOT_FOUND_HTTP_STATUS = 410;
@@ -16,19 +15,16 @@
         document.getElementById("comment").oninput = postTyping;
         setInterval(getTypers, TYPING_RATE);
     };
-    
+
     /**
      * Gets the typing users and injects them in the HTML after messages.
      */
     function getTypers() {
-        let name = document.getElementById("username").value;
-        
         fetch(URL + "/typing")
             .then(checkStatus)
             .then(function (response) {
                 clearError();
                 let json = JSON.parse(response);
-                console.log(json.typing);
                 getMessages();
                 let place = document.getElementById("place");
                 if (place) {
@@ -138,13 +134,15 @@
     /**
      * This function checks for any common errors that may have occured in fetching data
      * and returns the response text if there are none.
-     * @param {Response} response
+     * @param {Response} response Response back from server
+     * @return {Promise} Promise from client
      */
     function checkStatus(response) {
-        if ((response.status >= OK_HTTP_STATUS && response.status < MULTCHOICES_HTTP_STATUS) | response.status === NO_CHANGE) {
+        if ((response.status >= OK_HTTP_STATUS && response.status < MULTCHOICES_HTTP_STATUS) |
+        response.status === NO_CHANGE) {
             return response.text();
         } else if (response.status === NOT_FOUND_HTTP_STATUS) {
-            return Promise.reject(new Error(response.status + ": Message not found in the database"));
+            return Promise.reject(new Error(response.status+": Not found in the database"));
         } else if (response.status === FILE_GONE_HTTP_STATUS) {
             return Promise.reject(new Error(response.status + ": File not found"));
         } else {
@@ -154,6 +152,7 @@
 
     /**
      * Posts an error with details.
+     * @param {Error} error Error from server
      */
     function postError(error) {
         let errorBanner = document.getElementById("status");
@@ -172,6 +171,7 @@
 
     /**
      * Clears all child nodes of a parent node.
+     * @param {HTMLElement} node Parent Node
      */
     function clearChildren(node) {
         while (node.firstChild) {
