@@ -26,7 +26,6 @@
 			.then(function (response) {
 				clearError();
 				let json = JSON.parse(response);
-				console.log(json.typing);
 				getMessages();
 				let typingDiv = document.getElementById("typingDiv");
 				if (typingDiv) {
@@ -133,7 +132,8 @@
 				})
 				.catch(postError);
 		} else {
-			postError(new Error("InputError: Username must be defined and message must be defined."));
+			postError(
+                new Error("InputError: Username must be defined and message must be defined."));
 		}
 	}
 
