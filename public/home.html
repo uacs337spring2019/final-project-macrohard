@@ -1,45 +1,46 @@
 <!DOCTYPE html>
 <html>
-	<!--
+<!--
     Authors: Coby Allred & Cathy McIntosh
     Section: CSC 337
     Description: This is the HTML for a chatting home screen where the user can navigate betweeen
     conversations and have a main chat log on the right.
 	-->
-	<head>
-		<link rel="stylesheet" type="text/css" href="cMessage.css" />
-        <script type="text/javascript" src="cMessage.js"></script>
-        <link rel="icon" href="icon.jpg" type="image/jpg" sizes="16x16" />
-		<title>cMessage</title>
-	</head>
-	<body>
-        <!-- status: contains any error messages when fetching data-->
-        <div id="status"></div>
-        <h2 id="message-banner">cMessage Chatroom</h2>
-        <!-- container: main container for both conversation panel and messaging panel-->
-        <div id="container">
-            <!-- This panel contains all the messages that the user has between the 
+
+<head>
+	<link rel="stylesheet" type="text/css" href="cMessage.css" />
+	<script type="text/javascript" src="cMessage.js"></script>
+	<link rel="icon" href="icon.jpg" type="image/jpg" sizes="16x16" />
+	<title>cMessage</title>
+</head>
+
+<body>
+	<!-- status: contains any error messages when fetching data-->
+	<div id="status"></div>
+	<h2 id="message-banner">cMessage Chatroom</h2>
+	<!-- container: main container for both conversation panel and messaging panel-->
+	<div id="container">
+		<!-- This panel contains all the messages that the user has between the 
             other user in a conversation-->
-            <div id="message-panel">
-                <div id="messages">
-                    <!-- Each message will either be class "other", signaling 
+		<div id="message-panel">
+			<div id="messages">
+				<!-- Each message will either be class "other", signaling 
                     that it was sent from the other user, or "user", signaling that
                     it was sent from the current user.-->
-                    <div id="place">
+				<div id="place">
 
-                    </div>
-                </div>
-                <div id="input-container">
-                    <hr>
-                    <input type="text" placeholder="username" id="username"/>
-                    <div id="input">
-                        <textarea type="text" maxlength="180"
-                                placeholder="message"
-                                spellcheck=true id="comment"></textarea>
-                        <button id="send">Send</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-	</body>
+				</div>
+			</div>
+			<div id="input-container">
+				<hr>
+				<input type="text" placeholder="username" id="username" />
+				<div id="input">
+					<textarea type="text" maxlength="180" placeholder="message" spellcheck=true id="comment"></textarea>
+					<button id="send">Send</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
 </html>
