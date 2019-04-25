@@ -17,6 +17,21 @@ label {
     font-style: italic;
 }
 
+/*
+    Some color choices
+*/
+.error {
+    background-color: red;
+}
+
+.conversation:hover, button:hover, .user {
+    background-color: aquamarine;
+}
+
+button, .other {
+    background-color: lightgray;
+}
+
 h2, #status {
     overflow: hidden;
     background-color: white;
@@ -47,14 +62,6 @@ h2, #message-panel {
 
 #messages, #input {
     overflow-y: auto;
-}
-
-.conversation:hover, button:hover, .user {
-    background-color: aquamarine;
-}
-
-button, .other {
-    background-color: lightgray;
 }
 
 #input {

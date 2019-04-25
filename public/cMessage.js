@@ -152,18 +152,27 @@
         }
     }
 
+    /**
+     * Posts an error with details.
+     */
     function postError(error) {
         let errorBanner = document.getElementById("status");
         errorBanner.classList.add("error");
         errorBanner.innerHTML = error.message;
     }
 
+    /**
+     * Clears the error banner when things go right.
+     */
     function clearError() {
         let errorBanner = document.getElementById("status");
         errorBanner.classList.remove("error");
         errorBanner.innerHTML = "";
     }
 
+    /**
+     * Clears all child nodes of a parent node.
+     */
     function clearChildren(node) {
         while (node.firstChild) {
             node.removeChild(node.firstChild);
