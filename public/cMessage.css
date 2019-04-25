@@ -17,6 +17,8 @@ label {
 	font-style: italic;
 }
 
+
+
 /*
 	Some color choices
 */
@@ -63,13 +65,25 @@ h2, #message-panel {
 	overflow-y: auto;
 }
 
+#input, #username {
+    padding-top:10px;
+}
+
 #input {
 	display: flex;
-	padding-top:10px;
+    float: right;
+}
+
+#username {
+    float: left;
 }
 
 #input-container, button {
 	margin: 10px;
+}
+
+#input-container {
+    overflow: hidden;
 }
 
 button {
