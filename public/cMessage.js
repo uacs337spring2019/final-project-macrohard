@@ -103,7 +103,7 @@
 						newMessage.appendChild(label);
 						newMessage.appendChild(document.createElement("br"));
 						newMessage.innerHTML += json.messageData[i].message;
-						messages.prepend(newMessage);
+						messages.append(newMessage);
 					}
 				}
 			})
