@@ -30,20 +30,22 @@
 				let json = JSON.parse(response);
 				console.log(json.typing);
 				getMessages();
-				let place = document.getElementById("place");
-				if (place) {
-					place.innerHTML = "";
+				let typingDiv = document.getElementById("typingDiv");
+				if (typingDiv) {
+					typingDiv.innerHTML = "";
+					let newHr = document.createElement("hr");
+					typingDiv.appendChild(newHr);
 				} else {
-					place = document.createElement("div");
-					place.id = "place";
-					document.getElementById("messages").appendChild(place);
+					typingDiv = document.createElement("div");
+					typingDiv.id = "typingDiv";
+					document.getElementById("messages").appendChild(typingDiv);
 				}
 
 				for (let key in json.typing) {
 					let label = document.createElement("div");
 					label.innerHTML = key + " is typing ...";
 					label.className = "typing";
-					place.appendChild(label);
+					typingDiv.appendChild(label);
 				}
 			})
 			.catch(postError);
@@ -54,7 +56,7 @@
      */
 	function postTyping() {
 		let name = document.getElementById("username").value;
-		if (!(name === "" | name == null | name === undefined)) {
+		if (!(name === "" || name == null || name === undefined)) {
 			const message = { 'username': name };
 			let fetchOptions = {
 				'method': 'POST',
@@ -71,7 +73,7 @@
 				})
 				.catch(postError);
 		} else {
-			postError(new Error("InputError: Username must be defined"));
+			postError(new Error("InputError: Username must be defined."));
 		}
 	}
 
@@ -114,8 +116,8 @@
 	function sendMessage() {
 		let name = document.getElementById("username").value;
 		let comment = document.getElementById("comment").value;
-		if (!(name === "" | name == null | name === undefined) &&
-			!(comment === "" | comment == null | comment === undefined)) {
+		if (!(name === "" || name == null || name === undefined) &&
+			!(comment === "" || comment == null || comment === undefined)) {
 			const message = { 'username': name, 'message': comment };
 			let fetchOptions = {
 				'method': 'POST',
@@ -132,6 +134,8 @@
 					username = name;
 				})
 				.catch(postError);
+		} else {
+			postError(new Error("InputError: Username must be defined and message must be defined."));
 		}
 	}
 
@@ -141,7 +145,7 @@
      * @param {Response} response
      */
 	function checkStatus(response) {
-		if ((response.status >= OK_HTTP_STATUS && response.status < MULTCHOICES_HTTP_STATUS) | response.status === NO_CHANGE) {
+		if ((response.status >= OK_HTTP_STATUS && response.status < MULTCHOICES_HTTP_STATUS) || response.status === NO_CHANGE) {
 			return response.text();
 		} else if (response.status === NOT_FOUND_HTTP_STATUS) {
 			return Promise.reject(new Error(response.status + ": Message not found in the database"));

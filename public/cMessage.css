@@ -21,7 +21,7 @@ label {
     Some color choices
 */
 .error {
-    background-color: red;
+    background-color: red !important;
 }
 
 .conversation:hover, button:hover, .user {
@@ -55,7 +55,6 @@ h2, #message-panel {
 }
 
 #message-panel {
-    height: 750px;
     width: 70%;
     margin: auto;
 }
