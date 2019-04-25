@@ -1,5 +1,5 @@
 # cMessageServer
-Contains the NodeJS service for cMessage.
+Contains the NodeJS service for cMessage. Project by Coby Allred and Cathy McIntosh.
 
 ## Install
 1. Clone folder.
