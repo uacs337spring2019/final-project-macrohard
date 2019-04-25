@@ -17,7 +17,7 @@ label {
 	font-style: italic;
 }
 
-#status {
+#status, #validation {
     float: left;
 }
 
