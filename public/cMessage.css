@@ -17,7 +17,9 @@ label {
 	font-style: italic;
 }
 
-
+#status {
+    float: left;
+}
 
 /*
 	Some color choices
@@ -65,17 +67,9 @@ h2, #message-panel {
 	overflow-y: auto;
 }
 
-#input, #username {
-    padding-top:10px;
-}
-
 #input {
 	display: flex;
-    float: right;
-}
-
-#username {
-    float: left;
+    padding-top:10px;
 }
 
 #input-container, button {
