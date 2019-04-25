@@ -29,6 +29,7 @@
                 clearError();
                 let json = JSON.parse(response);
                 console.log(json.typing);
+                getMessages();
                 let place = document.getElementById("place");
                 if (place) {
                     place.innerHTML = "";
@@ -128,7 +129,6 @@
                 .then(checkStatus)
                 .then(function () {
                     clearError();
-                    getMessages();
                     username = name;
                 })
                 .catch(postError);
